@@ -29,7 +29,11 @@ export default class ProductsController {
 
     const createProduct = new CreateProductService();
 
-    const product = await createProduct.execute({ name, price, quantity });
+    const product = await createProduct.execute({
+      name,
+      price,
+      quantity,
+    });
 
     return response.json(product);
   }
@@ -40,7 +44,12 @@ export default class ProductsController {
 
     const updateProduct = new UpdateProductService();
 
-    const product = await updateProduct.execute({ id, name, price, quantity });
+    const product = await updateProduct.execute({
+      id,
+      name,
+      price,
+      quantity,
+    });
 
     return response.json(product);
   }

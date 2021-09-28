@@ -3,6 +3,9 @@ import User from '../entities/User';
 
 @EntityRepository(User)
 class UsersRepository extends Repository<User> {
+  hash(password: string, arg1: number) {
+    throw new Error('Method not implemented.');
+  }
   public async findByName(name: string): Promise<User | undefined> {
     const user = await this.findOne({
       where: {
